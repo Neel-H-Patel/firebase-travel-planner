@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-// using firestore, you only import the functions that are needed
+// using firestore, you only import the functions that are needed (tree-shakeable)
 import {
   addDoc,
   collection,
