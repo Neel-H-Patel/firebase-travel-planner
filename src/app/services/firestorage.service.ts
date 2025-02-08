@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Storage } from '@angular/fire/storage';
+import {ref, Storage, uploadBytes} from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,10 @@ export class FireStorageService {
   }
 
   // upload file
+  async uploadFile(file: File, path: string) {
+    const storageRef = ref(this.storage, path);
+    return await uploadBytes(storageRef, file);
+  }
 
   // download file
 
